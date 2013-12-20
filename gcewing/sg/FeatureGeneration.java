@@ -17,9 +17,10 @@ public class FeatureGeneration {
 	public static void onInitMapGen(InitMapGenEvent e) {
 		switch (e.type) {
 			case SCATTERED_FEATURE:
-				if (e.newGen instanceof MapGenStructure)
-					e.newGen = modifyScatteredFeatureGen((MapGenStructure)e.newGen);
-				else
+				//Modified by Zepheris
+				//if (e.newGen instanceof MapGenStructure)
+				//	e.newGen = modifyScatteredFeatureGen((MapGenStructure)e.newGen);
+				//else
 					System.out.printf("SGCraft: FeatureGeneration: SCATTERED_FEATURE generator is not a MapGenStructure, cannot customise\n");
 				break;
 		}
