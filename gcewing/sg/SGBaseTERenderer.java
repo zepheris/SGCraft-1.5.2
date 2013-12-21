@@ -250,7 +250,7 @@ class SGBaseTERenderer extends TileEntitySpecialRenderer {
 	}
 	
 	void renderEventHorizon(SGBaseTE te) {
-		bindTextureByName("/misc/water.png");
+		bindTextureByName("/gcewing/sg/resources/event_horizon.png");
 		GL11.glDisable(GL11.GL_CULL_FACE);
 		GL11.glNormal3d(0, 0, 1);
 		double grid[][] = te.getEventHorizonGrid()[0];
