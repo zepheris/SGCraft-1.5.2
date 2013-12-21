@@ -741,7 +741,7 @@ public class SGBaseTE extends BaseChunkLoadingTE  implements IInventory {
 		WorldServer newWorld = server.worldServerForDimension(newDimension);
 		//System.out.printf("SGBaseTE.transferPlayerToDimension: %s with %s\n", newWorld, newWorld.getEntityTracker());
 		player.closeScreen();
-        Packet250CustomPayload[] pkt = ForgePacket.makePacketSet(new DimensionRegisterPacket(newDimension, 0));
+        Packet250CustomPayload[] pkt = ForgePacket.makePacketSet(new DimensionRegisterPacket(newDimension,  DimensionManager.getProviderType(newDimension)));
         player.playerNetServerHandler.sendPacketToPlayer(pkt[0]);
 		player.playerNetServerHandler.sendPacketToPlayer(new Packet9Respawn(player.dimension,
 			(byte)player.worldObj.difficultySetting, newWorld.getWorldInfo().getTerrainType(),
