@@ -18,7 +18,7 @@ public class FeatureUnderDesertPyramid extends StructureComponent {
 	
 	public FeatureUnderDesertPyramid(StructureComponent base) {
 		super(0);
-		System.out.printf("SGCraft: FeatureUnderDesertPyramid\n");
+		//System.out.printf("SGCraft: FeatureUnderDesertPyramid\n");
 		this.base = base;
 		StructureBoundingBox baseBox = base.getBoundingBox();
 		int cx = baseBox.getCenterX();
@@ -43,8 +43,7 @@ public class FeatureUnderDesertPyramid extends StructureComponent {
 		int sgBase = SGCraft.sgBaseBlock.blockID;
 		int sgBaseNorth = 0;
 		int sgRing = SGCraft.sgRingBlock.blockID;
-		System.out.printf("SGCraft: FeatureUnderDesertPyramid.addComponentParts: " +
-			"Filling (%d,%d,%d)-(%d,%d,%d)\n", box.minX, box.minY, box.minZ, box.maxX, box.maxY, box.maxZ);
+		//System.out.printf("SGCraft: FeatureUnderDesertPyramid.addComponentParts: " + "Filling (%d,%d,%d)-(%d,%d,%d)\n", box.minX, box.minY, box.minZ, box.maxX, box.maxY, box.maxZ);
 		// Main chamber
 		fillWithBlocks(world, clip, 0, 0, 0, 10, 7, 10, sandstone, 0, false);
 		// Stairwell

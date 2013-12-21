@@ -64,8 +64,8 @@ public abstract class BaseChunkLoadingTE extends BaseTileEntity {
 		for (int i = minX; i <= maxX; i++)
 			for (int j = minZ; j <= maxZ; j++) {
 				int x = chunkX + i, z = chunkZ + j;
-				System.out.printf("BaseChunkLoadingTE.forceChunkRangeOnTicket: forcing chunk (%d; %d, %d)\n",
-					worldObj.provider.dimensionId, x, z);
+				//System.out.printf("BaseChunkLoadingTE.forceChunkRangeOnTicket: forcing chunk (%d; %d, %d)\n",
+				System.out.printf("Forcing chunk (%d; %d, %d)\n", worldObj.provider.dimensionId, x, z);
 				ForgeChunkManager.forceChunk(ticket, new ChunkCoordIntPair(x, z));
 			}
 	}
@@ -105,7 +105,7 @@ public abstract class BaseChunkLoadingTE extends BaseTileEntity {
 	
 	@Override
 	public void invalidate() {
-		System.out.printf("BaseChunkLoadingTE.invalidate\n");
+		//System.out.printf("BaseChunkLoadingTE.invalidate\n");
 		releaseChunkTicket();
 		super.invalidate();
 	}
@@ -118,15 +118,15 @@ public abstract class BaseChunkLoadingTE extends BaseTileEntity {
 	}
 	
 	public void dumpChunkLoadingState(String label) {
-		System.out.printf("%s: Chunk loading state:\n", label);
-		System.out.printf("Chunk ticket = %s\n", chunkTicket);
+		//System.out.printf("%s: Chunk loading state:\n", label);
+		//System.out.printf("Chunk ticket = %s\n", chunkTicket);
 		if (chunkTicket != null) {
-			System.out.printf("Loaded chunks:");
+			//System.out.printf("Loaded chunks:");
 			for (Object item : chunkTicket.getChunkList()) {
 				ChunkCoordIntPair coords = (ChunkCoordIntPair)item;
-				System.out.printf(" (%d,%d)", coords.chunkXPos, coords.chunkZPos);
+				//System.out.printf(" (%d,%d)", coords.chunkXPos, coords.chunkZPos);
 			}
-			System.out.printf("\n");
+			//System.out.printf("\n");
 		}
 	}
 

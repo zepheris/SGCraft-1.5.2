@@ -21,7 +21,7 @@ public class BaseItem extends Item {
 	}
 	
 	public void updateIcons(IconRegister reg) {
-		System.out.printf("BaseItem.updateIcons: %s\n", textureName);
+		//System.out.printf("BaseItem.updateIcons: %s\n", textureName);
 		itemIcon = reg.registerIcon(textureName);
 	}
 

@@ -58,7 +58,7 @@ public class BaseProxyClient extends Proxy {
 	
 	void loadTextures(BaseMod mod) {
 		MinecraftForgeClient.preloadTexture(mod.textureFile);
-		System.out.printf("BaseProxyCLient.loadTextures:" + "mod.textureFile");
+		//System.out.printf("BaseProxyCLient.loadTextures:" + "mod.textureFile");
 	}
 	
 	void registerRenderers() {
@@ -130,7 +130,7 @@ public class BaseProxyClient extends Proxy {
 	}
 	
 	GuiScreen getGuiScreen(int id, EntityPlayer player, World world, int x, int y, int z) {
-		System.out.printf("%s: No GuiScreen registered for gui id %d\n", this, id);
+		//System.out.printf("%s: No GuiScreen registered for gui id %d\n", this, id);
 		return null;
 	}
 

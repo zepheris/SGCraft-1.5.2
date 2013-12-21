@@ -65,8 +65,7 @@ public class SGControllerBlock extends Base4WayBlock<SGControllerTE> {
 		SGControllerTE cte = getTileEntity(world, x, y, z);
 		super.breakBlock(world, x, y, z, id, data);
 		if (cte == null) {
-			System.out.printf("SGControllerBlock.breakBlock: No tile entity at (%d,%d,%d)\n",
-				x, y, z);
+			//System.out.printf("SGControllerBlock.breakBlock: No tile entity at (%d,%d,%d)\n",	x, y, z);
 		}
 		else if (cte.isLinkedToStargate) {
 			SGBaseTE gte = cte.getLinkedStargateTE();

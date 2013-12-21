@@ -32,7 +32,7 @@ public class BaseNBTChannel<PACKET_TYPE extends Enum> {
 		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
 		try {
 			ObjectOutputStream stream = new ObjectOutputStream(bytes);
-			System.out.printf("BaseNBTChannel: Sending type %s nbt %s\n", type, nbt);
+			//System.out.printf("BaseNBTChannel: Sending type %s nbt %s\n", type, nbt);
 			stream.writeObject(type);
 			NBTBase.writeNamedTag(nbt, stream);
 			stream.close();
@@ -52,9 +52,9 @@ public class BaseNBTChannel<PACKET_TYPE extends Enum> {
 			try {
 				ObjectInputStream stream = new ObjectInputStream(bytes);
 				PACKET_TYPE type = (PACKET_TYPE)stream.readObject();
-				System.out.printf("BaseNBTChannel: Received type %s\n", type);
+				//System.out.printf("BaseNBTChannel: Received type %s\n", type);
 				NBTTagCompound nbt = (NBTTagCompound)NBTBase.readNamedTag(stream);
-				System.out.printf("BaseNBTChannel: Received nbt %s\n", nbt);
+				//System.out.printf("BaseNBTChannel: Received nbt %s\n", nbt);
 			receive(type, nbt, (EntityPlayer)player);
 			}
 			catch (Exception e) {

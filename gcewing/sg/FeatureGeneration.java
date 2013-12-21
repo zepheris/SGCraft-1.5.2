@@ -21,7 +21,7 @@ public class FeatureGeneration {
 				//if (e.newGen instanceof MapGenStructure)
 				//	e.newGen = modifyScatteredFeatureGen((MapGenStructure)e.newGen);
 				//else
-					System.out.printf("SGCraft: FeatureGeneration: SCATTERED_FEATURE generator is not a MapGenStructure, cannot customise\n");
+					//System.out.printf("SGCraft: FeatureGeneration: SCATTERED_FEATURE generator is not a MapGenStructure, cannot customise\n");
 				break;
 		}
 	}
@@ -51,8 +51,7 @@ class SGStructureMap extends HashMap {
 		//int i = 0;
 		for (Object comp : oldComponents) {
 			StructureBoundingBox box = ((StructureComponent)comp).getBoundingBox();
-			System.out.printf("SGCraft: FeatureGeneration: Found component %s at (%s, %s)\n",
-				comp, box.getCenterX(), box.getCenterZ());
+			//System.out.printf("SGCraft: FeatureGeneration: Found component %s at (%s, %s)\n", comp, box.getCenterX(), box.getCenterZ());
 			if (comp instanceof ComponentScatteredFeatureDesertPyramid)
 				newComponents.add(new FeatureUnderDesertPyramid((ComponentScatteredFeatureDesertPyramid)comp));
 			//++i;

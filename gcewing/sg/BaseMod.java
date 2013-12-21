@@ -52,7 +52,7 @@ public class BaseMod {
 		resourceDir = "/" + resourceRelDir;
 		textureFile = resourceDir + "textures.png";
 		resourceURL = getClass().getClassLoader().getResource(resourceRelDir);
-		System.out.printf("BaseMod: resourceURL = %s\n", resourceURL);
+		//System.out.printf("BaseMod: resourceURL = %s\n", resourceURL);
 	}
 
 	//@Mod.PreInit
@@ -62,7 +62,7 @@ public class BaseMod {
 		boolean[] configMarkers = ReflectionHelper.getPrivateValue(Configuration.class, config, "configMarkers");
 		preallocateBlockIDs(configMarkers);
 		preallocateItemIDs(configMarkers);
-		System.out.printf("BaseMod: Registering packet handlers for channel '%s'\n", channel);
+		//System.out.printf("BaseMod: Registering packet handlers for channel '%s'\n", channel);
 	}
 	
 	void preallocateBlockIDs(boolean[] configMarkers) {
@@ -70,7 +70,7 @@ public class BaseMod {
 		for (Property prop : items.getValues().values()) {
 			int id = prop.getInt();
 			if (id != -1) {
-				System.out.printf("BaseMod.preallocateItemIDs: Marking block id %d as in use\n", id);
+				//System.out.printf("BaseMod.preallocateItemIDs: Marking block id %d as in use\n", id);
 				configMarkers[id] = true;
 			}
 		}
@@ -81,7 +81,7 @@ public class BaseMod {
 		for (Property prop : items.getValues().values()) {
 			int id = prop.getInt();
 			if (id != -1) {
-				System.out.printf("BaseMod.preallocateItemIDs: Marking item id %d as in use\n", id);
+				//System.out.printf("BaseMod.preallocateItemIDs: Marking item id %d as in use\n", id);
 				configMarkers[id + 256] = true;
 			}
 		}
@@ -106,7 +106,7 @@ public class BaseMod {
 		else
 			proxy = new Proxy();
 		proxy.init(this);
-		System.out.printf("%s: BaseMod.postInit: Registering gui handler %s\n", this, proxy);
+		//System.out.printf("%s: BaseMod.postInit: Registering gui handler %s\n", this, proxy);
 		NetworkRegistry.instance().registerGuiHandler(this, proxy);
 		saveConfig();
 	}
@@ -239,13 +239,13 @@ public class BaseMod {
 				URL jarURL = new URL(resPath.substring(0, pling));
 				String resDirInJar = resPath.substring(pling + 2);
 				String prefix = resDirInJar + subdir + "/";
-				System.out.printf("BaseMod.listResources: looking for names starting with %s\n", prefix);
+				//System.out.printf("BaseMod.listResources: looking for names starting with %s\n", prefix);
 				JarFile jar = new JarFile(new File(jarURL.toURI()));
 				Enumeration<JarEntry> entries = jar.entries();
 				while (entries.hasMoreElements()) {
 					String name = entries.nextElement().getName();
 					if (name.startsWith(prefix) && !name.endsWith("/") && !name.contains("/.")) {
-						System.out.printf("BaseMod.listResources: name = %s\n", name);
+						//System.out.printf("BaseMod.listResources: name = %s\n", name);
 						result.add(name.substring(prefix.length()));
 					}
 				}
@@ -264,7 +264,7 @@ public class BaseMod {
 	}
 
 	static void openGui(EntityPlayer player, int id, World world, int x, int y, int z) {
-		System.out.printf("%s: BaseMod.openGui: %d for %s\n", base, id, player);
+		//System.out.printf("%s: BaseMod.openGui: %d for %s\n", base, id, player);
 		player.openGui(base, id, world, x, y, z);
 	}
 	

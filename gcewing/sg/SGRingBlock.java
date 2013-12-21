@@ -75,11 +75,10 @@ public class SGRingBlock extends BaseBlock<SGRingTE> {
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player,
 		int side, float cx, float cy, float cz)
 	{
-		System.out.printf("SGRingBlock.onBlockActivated at (%d, %d, %d)\n", x, y, z);
+		//System.out.printf("SGRingBlock.onBlockActivated at (%d, %d, %d)\n", x, y, z);
 		SGRingTE te = getTileEntity(world, x, y, z);
 		if (te.isMerged) {
-			System.out.printf("SGRingBlock.onBlockActivated: base at (%d, %d, %d)\n",
-				te.baseX, te.baseY, te.baseZ);
+			//System.out.printf("SGRingBlock.onBlockActivated: base at (%d, %d, %d)\n", te.baseX, te.baseY, te.baseZ);
 			Block block = Block.blocksList[world.getBlockId(te.baseX, te.baseY, te.baseZ)];
 			if (block instanceof SGBaseBlock)
 				block.onBlockActivated(world, te.baseX, te.baseY, te.baseZ, player,

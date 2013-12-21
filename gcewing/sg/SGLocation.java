@@ -47,9 +47,7 @@ public class SGLocation {
 	SGBaseTE getStargateTE() {
 		World world = /*DimensionManager.*/SGAddressing.getWorld(dimension);
 		if (world == null) {
-			System.out.printf(
-				"SGCraft: SGLocation.getStargateTE: Oh, noes! Dimension %d is not loaded. How can this be?",
-				dimension);
+			System.out.printf("SGCraft: SGLocation.getStargateTE: Oh, noes! Dimension %d is not loaded. How can this be?", dimension);
 				return null;
 		}
 		TileEntity te = world.getBlockTileEntity(x, y, z);

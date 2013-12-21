@@ -90,7 +90,7 @@ public class BaseProxy implements IGuiHandler {
 	}
 	
 	Container getGuiContainer(int id, EntityPlayer player, World world, int x, int y, int z) {
-		System.out.printf("%s: No Container registered for gui id %d\n", this, id);
+		//System.out.printf("%s: No Container registered for gui id %d\n", this, id);
 		return null;
 	}
 
