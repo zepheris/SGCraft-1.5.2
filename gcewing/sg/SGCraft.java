@@ -159,10 +159,10 @@ public class SGCraft extends BaseMod {
 	}
 	
 	void registerTradeHandlers() {
-		VillagerRegistry reg = VillagerRegistry.instance();
-		tokraVillagerID = config.getVillager("tokra", resourcePath("tokra.png"));
-		SGTradeHandler handler = new SGTradeHandler();
-		reg.registerVillageTradeHandler(tokraVillagerID, handler);
+		//VillagerRegistry reg = VillagerRegistry.instance();
+		//tokraVillagerID = config.getVillager("tokra", resourcePath("tokra.png"));
+		//SGTradeHandler handler = new SGTradeHandler();
+		//reg.registerVillageTradeHandler(tokraVillagerID, handler);
 	}
 	
 	@ForgeSubscribe

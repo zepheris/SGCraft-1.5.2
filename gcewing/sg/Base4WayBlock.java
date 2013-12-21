@@ -55,7 +55,7 @@ public class Base4WayBlock<TE extends TileEntity> extends BaseBlock<TE> {
 	}
 
 	@Override
-	public Icon getBlockTextureFromSideAndMetadata(int side, int data) {
+	public Icon getIcon(int side, int data) {
 		int rotation = extractRotation(data);
 		int localSide = Directions.globalToLocalSide(side, rotation);
 		return getBlockTextureFromLocalSideAndMetadata(localSide, data);

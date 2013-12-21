@@ -58,6 +58,7 @@ public class BaseProxyClient extends Proxy {
 	
 	void loadTextures(BaseMod mod) {
 		MinecraftForgeClient.preloadTexture(mod.textureFile);
+		System.out.printf("BaseProxyCLient.loadTextures:" + "mod.textureFile");
 	}
 	
 	void registerRenderers() {

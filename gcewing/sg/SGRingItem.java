@@ -18,7 +18,7 @@ public class SGRingItem extends ItemBlock {
 	
 	@Override
 	public Icon getIconFromDamage(int i) {
-		return SGCraft.sgRingBlock.getBlockTextureFromSideAndMetadata(0, i);
+		return SGCraft.sgRingBlock.getIcon(0, i);
 	}
 	
 	@Override

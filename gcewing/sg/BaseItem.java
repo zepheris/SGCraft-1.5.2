@@ -20,10 +20,9 @@ public class BaseItem extends Item {
 		setCreativeTab(CreativeTabs.tabMisc);
 	}
 	
-	@Override
 	public void updateIcons(IconRegister reg) {
 		System.out.printf("BaseItem.updateIcons: %s\n", textureName);
-		iconIndex = reg.registerIcon(textureName);
+		itemIcon = reg.registerIcon(textureName);
 	}
 
 //	@Override
